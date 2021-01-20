@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+    {% block body %}
+        <h1>Register for Frosh IMs</h1>
+        <form action="/register" method="POST">
+            <input name="name" type="text" placeholder="Name">
+            <input name="email" type="text" placeholder="Email">
+            <select name="dorm">
+                <option value="Apley Court">Apley Court</option>
+                <option value="Canaday">Canaday</option>
+            </select>
+            <input type="submit" value="Submit">
+        </form>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Default checkbox
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+            <label class="form-check-label" for="flexCheckChecked">
+              Checked checkbox
+            </label>
+          </div>
+
+          <script>
+              document.querySelector('form').onsubmit = function() {
+                  if (!document.querySelector('input').value) {
+                      alert('You must provide your name!');
+                      return false;
+                  }
+                  else if (!document.querySelector('select').value)) {
+                      alert('You must provide your dorm!');
+                      return false;
+                  }
+                  return true;
+
+                  };
+              
+          </script>
+    {% endblock %}
